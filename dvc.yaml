@@ -1,0 +1,34 @@
+stages:
+  ingest:
+    cmd: python -m src.ingest
+    deps:
+      - src/ingest.py
+      - params.yaml
+    outs:
+      - data/raw/raw_data.csv
+
+  etl:
+    cmd: python -m src.ETL
+    deps:
+      - src/ETL.py
+      - params.yaml
+      - data/raw/raw_data.csv
+    outs:
+      - data/processed/processed_data.csv
+
+  eda:
+    cmd: python -m src.EDA
+    deps:
+      - src/EDA.py
+      - data/processed/processed_data.csv
+    outs:
+      - data/eda
+
+  train_model:
+    cmd: python -m src.train_model
+    deps:
+      - src/train_model.py
+      - data/processed/processed_data.csv
+      - params.yaml
+    outs:
+      - mlruns

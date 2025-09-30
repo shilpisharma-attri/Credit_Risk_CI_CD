@@ -1,0 +1,26 @@
+logging:
+  log_file: "logs/pipeline.log"
+  log_level: "INFO"
+  log_format: "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+  console: True
+
+data:
+  raw_path: "data/raw/raw_data.csv"
+  processed_path: "data/processed/processed_data.csv"
+
+model:
+  test_size: 0.2
+  random_state: 42
+
+hyperparameters:
+  random_forest:
+    n_estimators: [100, 200]
+    max_depth: [5, 10]
+  xgboost:
+    n_estimators: [100, 200]
+    max_depth: [3, 6]
+    learning_rate: [0.01, 0.1]
+  lightgbm:
+    n_estimators: [100, 200]
+    max_depth: [5, 10]
+    learning_rate: [0.01, 0.1]

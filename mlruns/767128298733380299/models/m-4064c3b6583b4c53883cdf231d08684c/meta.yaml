@@ -1,0 +1,10 @@
+artifact_location: /home/ctp/Training_work/doc/credit_risk/mlruns/767128298733380299/models/m-4064c3b6583b4c53883cdf231d08684c/artifacts
+creation_timestamp: 1759224018923
+experiment_id: '767128298733380299'
+last_updated_timestamp: 1759224020693
+model_id: m-4064c3b6583b4c53883cdf231d08684c
+model_type: null
+name: RandomForest_model
+source_run_id: 79ea9f9e14e24d27972e6bb584656fbf
+status: 2
+status_message: null

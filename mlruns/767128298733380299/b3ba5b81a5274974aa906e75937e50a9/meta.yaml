@@ -1,0 +1,14 @@
+artifact_uri: /home/ctp/Training_work/doc/credit_risk/mlruns/767128298733380299/b3ba5b81a5274974aa906e75937e50a9/artifacts
+end_time: 1759224034925
+entry_point_name: ''
+experiment_id: '767128298733380299'
+lifecycle_stage: active
+run_id: b3ba5b81a5274974aa906e75937e50a9
+run_name: LightGBM_HPO
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759224033278
+status: 3
+tags: []
+user_id: ctp

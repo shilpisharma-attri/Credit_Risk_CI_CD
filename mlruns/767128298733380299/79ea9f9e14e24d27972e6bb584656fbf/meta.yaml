@@ -1,0 +1,14 @@
+artifact_uri: /home/ctp/Training_work/doc/credit_risk/mlruns/767128298733380299/79ea9f9e14e24d27972e6bb584656fbf/artifacts
+end_time: 1759224020699
+entry_point_name: ''
+experiment_id: '767128298733380299'
+lifecycle_stage: active
+run_id: 79ea9f9e14e24d27972e6bb584656fbf
+run_name: RandomForest_HPO
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759224018917
+status: 3
+tags: []
+user_id: ctp

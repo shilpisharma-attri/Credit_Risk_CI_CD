@@ -1,0 +1,10 @@
+artifact_location: /home/ctp/Training_work/doc/credit_risk/mlruns/767128298733380299/models/m-ec3aa024a7ac486db6cfe4180620705a/artifacts
+creation_timestamp: 1759224033286
+experiment_id: '767128298733380299'
+last_updated_timestamp: 1759224034920
+model_id: m-ec3aa024a7ac486db6cfe4180620705a
+model_type: null
+name: LightGBM_model
+source_run_id: b3ba5b81a5274974aa906e75937e50a9
+status: 2
+status_message: null

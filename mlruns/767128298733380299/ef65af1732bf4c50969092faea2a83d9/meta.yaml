@@ -1,0 +1,14 @@
+artifact_uri: /home/ctp/Training_work/doc/credit_risk/mlruns/767128298733380299/ef65af1732bf4c50969092faea2a83d9/artifacts
+end_time: 1759224024606
+entry_point_name: ''
+experiment_id: '767128298733380299'
+lifecycle_stage: active
+run_id: ef65af1732bf4c50969092faea2a83d9
+run_name: XGBoost_HPO
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759224023163
+status: 3
+tags: []
+user_id: ctp

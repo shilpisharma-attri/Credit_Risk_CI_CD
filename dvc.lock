@@ -1,0 +1,76 @@
+schema: '2.0'
+stages:
+  ingest:
+    cmd: python -m src.ingest
+    deps:
+    - path: params.yaml
+      hash: md5
+      md5: 387ec2849f579127167c103868c43fc8
+      size: 562
+    - path: src/ingest.py
+      hash: md5
+      md5: e83c96751435163db98c65af821b1825
+      size: 1173
+    outs:
+    - path: data/raw/raw_data.csv
+      hash: md5
+      md5: 05e4042ae0a041b37c60e3877f1819b3
+      size: 2217131
+  etl:
+    cmd: python -m src.ETL
+    deps:
+    - path: data/raw/raw_data.csv
+      hash: md5
+      md5: 05e4042ae0a041b37c60e3877f1819b3
+      size: 2217131
+    - path: params.yaml
+      hash: md5
+      md5: 387ec2849f579127167c103868c43fc8
+      size: 562
+    - path: src/ETL.py
+      hash: md5
+      md5: 39f33a398b06fa045d3f2f83451e9321
+      size: 4092
+    outs:
+    - path: data/processed/processed_data.csv
+      hash: md5
+      md5: ad3d41ed1e52456f49e8bd830084c0ee
+      size: 1844519
+  eda:
+    cmd: python -m src.EDA
+    deps:
+    - path: data/processed/processed_data.csv
+      hash: md5
+      md5: ad3d41ed1e52456f49e8bd830084c0ee
+      size: 1844519
+    - path: src/EDA.py
+      hash: md5
+      md5: 1cf2854c9f5ba5cc38283e19157abb03
+      size: 1191
+    outs:
+    - path: data/eda
+      hash: md5
+      md5: bbbd80f971267fc7a57eda2afd537f6e.dir
+      size: 160259
+      nfiles: 2
+  train_model:
+    cmd: python -m src.train_model
+    deps:
+    - path: data/processed/processed_data.csv
+      hash: md5
+      md5: ad3d41ed1e52456f49e8bd830084c0ee
+      size: 1844519
+    - path: params.yaml
+      hash: md5
+      md5: 387ec2849f579127167c103868c43fc8
+      size: 562
+    - path: src/train_model.py
+      hash: md5
+      md5: 1cc0f22af16d7e96db188fd0d172a88b
+      size: 2866
+    outs:
+    - path: mlruns
+      hash: md5
+      md5: b1383338835fcbaa8dc5e4643e9678ab.dir
+      size: 11690502
+      nfiles: 67

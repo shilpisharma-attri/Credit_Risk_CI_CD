@@ -1,0 +1,10 @@
+artifact_location: /home/ctp/Training_work/doc/credit_risk/mlruns/767128298733380299/models/m-14a10e4a6380435992ea126d4fbe03c1/artifacts
+creation_timestamp: 1759224023170
+experiment_id: '767128298733380299'
+last_updated_timestamp: 1759224024602
+model_id: m-14a10e4a6380435992ea126d4fbe03c1
+model_type: null
+name: XGBoost_model
+source_run_id: ef65af1732bf4c50969092faea2a83d9
+status: 2
+status_message: null
