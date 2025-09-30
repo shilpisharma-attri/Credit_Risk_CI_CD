@@ -1,0 +1,49 @@
+name: Credit Risk CI CD Pipeline
+
+on:
+ push:
+  branches:
+   - main
+ pull:
+  branches:
+   - main
+   
+jobs:
+ pipeline:
+  run-on: ubuntu-latest
+
+
+  steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v3
+   
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+            pip install dvc[all] mlflow sqlalchemy psycopg2-binary scikit-learn xgboost lightgbm seaborn matplotlib
+
+      # 4 Pull DVC tracked data (if remote storage is configured)
+      - name: DVC pull
+        run: |
+          dvc pull || echo "No DVC remote configured, skipping"
+
+      # 5 eproduce the full pipeline (ingest → ETL → EDA → train_hpo)
+      - name: Run full DVC pipeline
+        run: dvc repro
+
+      # 6 Optional: run tests
+      - name: Run tests
+        run: |
+          if [ -d "tests" ]; then
+              pytest tests/ --maxfail=1 --disable-warnings -q
+          fi
+
+      # 7 MLflow info (just to check)
+      - name: MLflow info
+        run: |
+          mlflow --version
+          echo "MLflow tracking URI: $MLFLOW_TRACKING_URI"
